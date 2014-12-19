@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ArscDecoder.iml" filepath="$PROJECT_DIR$/ArscDecoder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/arsc/arsc.iml" filepath="$PROJECT_DIR$/arsc/arsc.iml" />
     </modules>
   </component>
 </project>
