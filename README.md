@@ -6,104 +6,104 @@ Decode Android resources.arsc file
 STRUCTURE:
 -----------------------
 
-    **COMMON STRUCTURE**
+**COMMON STRUCTURE**
 
-          // Header that appears at the front of every data chunk in a resource.
-        * ResChunk_header
-            short type
-            short headerSize
-            int bodySize
+  // Header that appears at the front of every data chunk in a resource.
+* ResChunk_header
+    short type
+    short headerSize
+    int bodySize
 
-            chunk size: 2 + 2 + 4;
+    chunk size: 2 + 2 + 4;
 
-    **UNIQUE STRUCTURE**
+**UNIQUE STRUCTURE**
 
-          // Header for a resource table.
-        * ResTable_header
-            ResChunk_header header
-            int packageCount
+  // Header for a resource table.
+* ResTable_header
+    ResChunk_header header
+    int packageCount
 
-            chunk size: ResChunk_header.size + 4;
+    chunk size: ResChunk_header.size + 4;
 
-          // Definition for a pool of strings.
-        * ResStringPool_header
-            ResChunk_header header
-            int stringCount
-            int styleCount
-            int flags
-            int stringsStart
-            int stylesStart
+  // Definition for a pool of strings.
+* ResStringPool_header
+    ResChunk_header header
+    int stringCount
+    int styleCount
+    int flags
+    int stringsStart
+    int stylesStart
 
-            chunk size: ResChunk_header.size + 4 * 5
+    chunk size: ResChunk_header.size + 4 * 5
 
-          // Convenience class for assessing data in a ResStringPool resource.
-        * ResStringPool
-            skip: stringsStart - header.headerSize = stringCount * 4 + styleCount * 4
-                stringOffsets = int[stringCount]
-                styleOffsets = int[styleCount]
-            read string content, UTF8 or UTF16
-            read style content
+  // Convenience class for assessing data in a ResStringPool resource.
+* ResStringPool
+    skip: stringsStart - header.headerSize = stringCount * 4 + styleCount * 4
+        stringOffsets = int[stringCount]
+        styleOffsets = int[styleCount]
+    read string content, UTF8 or UTF16
+    read style content
 
-          // A collection of resource data types within a packages.
-        * ResTable_package
-            ResChunk_header header
-            int id
-            char[128] name
-            int typeStrings
-            int lastPublicType
-            int keyStrings
-            int lastPublicKey
+  // A collection of resource data types within a packages.
+* ResTable_package
+    ResChunk_header header
+    int id
+    char[128] name
+    int typeStrings
+    int lastPublicType
+    int keyStrings
+    int lastPublicKey
 
-            chunk size: ResChunk_header.size + 4 * 5 + 128 * 2
+    chunk size: ResChunk_header.size + 4 * 5 + 128 * 2
 
-          // A specification of the resources defined by a particular type.
-        * ResTable_typeSpec
-            ResChunk_header header
-            byte id
-            byte res0
-            short res1
-            int entryCount
+  // A specification of the resources defined by a particular type.
+* ResTable_typeSpec
+    ResChunk_header header
+    byte id
+    byte res0
+    short res1
+    int entryCount
 
-            chunk size: ResChunk_header.size + 1 * 2 + 2 + 4
+    chunk size: ResChunk_header.size + 1 * 2 + 2 + 4
 
-          // A collection of resource entries for a particular resource data type.
-        * ResTable_type
-            ResChunk_header
-            byte id
-            byte res0
-            short res1
-            int entryCount
-            int entriesStart
-            ResTable_config config
+  // A collection of resource entries for a particular resource data type.
+* ResTable_type
+    ResChunk_header
+    byte id
+    byte res0
+    short res1
+    int entryCount
+    int entriesStart
+    ResTable_config config
 
-            chunk size: ResChunk_header.size + 1 * 2 + 2 + 4 * 2 + ResTable_config.size
+    chunk size: ResChunk_header.size + 1 * 2 + 2 + 4 * 2 + ResTable_config.size
 
-                  // Describes a particular resource configuration.
-                * ResTable_config
-                    int size
-                    short mcc
-                    short mnc
-                    char[2] language
-                    char[2] country
-                    byte orientation
-                    byte touchscreen
-                    short density
-                    byte keyboard
-                    byte navigation
-                    byte inputFlags
-                    byte inputPad0
-                    short screenWidth
-                    short screenHeight
-                    short sdkVersion
-                    short minorVersion
-                    byte screenLayout
-                    byte uiMode
-                    short smallestScreenWidthDp
+  // Describes a particular resource configuration.
+* ResTable_config
+    int size
+    short mcc
+    short mnc
+    char[2] language
+    char[2] country
+    byte orientation
+    byte touchscreen
+    short density
+    byte keyboard
+    byte navigation
+    byte inputFlags
+    byte inputPad0
+    short screenWidth
+    short screenHeight
+    short sdkVersion
+    short minorVersion
+    byte screenLayout
+    byte uiMode
+    short smallestScreenWidthDp
 
-                    // connect with the size value
-                    // short screenWidthDp
-                    // short screenHeightDp
-                    // short layoutDirection
+    // connect with the size value
+    // short screenWidthDp
+    // short screenHeightDp
+    // short layoutDirection
 
 SAMPLE:
 -----------------------
