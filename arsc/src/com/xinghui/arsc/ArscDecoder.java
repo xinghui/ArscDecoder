@@ -77,7 +77,7 @@ public class ArscDecoder {
                      * 类型资源项数据块(RES_TABLE_TYPE_TYPE)
                      */
                     int spec_type_count = 0;
-                    ResChunk_header mChunkHeader = ResChunk_header.build(source);;
+                    ResChunk_header mChunkHeader = ResChunk_header.build(source);
                     while (spec_type_count < mTypeStringPoolHeader.getStringCount()){
                         System.out.println("\"...Header..............................\"");
 
