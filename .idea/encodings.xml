@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/arsc/res/app-debug.apk" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/res/dev.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/res/resources.arsc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/res/resources2.arsc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/com/xinghui/arsc/ArscDecoder.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/com/xinghui/arsc/Utils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/com/xinghui/arsc/resourcetype" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/ArscDecoder.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/Utils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResChunk_header.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResStringPool.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResStringPool_header.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResStringPool_ref.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResStringPool_span.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_config.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_entry.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_header.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_map.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_map_entry.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_package.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_ref.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_type.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResTable_typeSpec.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/Res_value.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arsc/src/main/java/com/xinghui/arsc/resourcetype/ResourceTypes.java" charset="UTF-8" />
+  </component>
+</project>
+
