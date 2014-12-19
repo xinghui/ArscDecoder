@@ -10,6 +10,7 @@ STRUCTURE:
 
   // Header that appears at the front of every data chunk in a resource.
 * ResChunk_header
+
         short type
         short headerSize
         int bodySize
@@ -20,6 +21,7 @@ STRUCTURE:
 
   // Header for a resource table.
 * ResTable_header
+
         ResChunk_header header
         int packageCount
 
@@ -27,6 +29,7 @@ STRUCTURE:
 
   // Definition for a pool of strings.
 * ResStringPool_header
+
         ResChunk_header header
         int stringCount
         int styleCount
@@ -38,6 +41,7 @@ STRUCTURE:
 
   // Convenience class for assessing data in a ResStringPool resource.
 * ResStringPool
+
         skip: stringsStart - header.headerSize = stringCount * 4 + styleCount * 4
             stringOffsets = int[stringCount]
             styleOffsets = int[styleCount]
@@ -46,6 +50,7 @@ STRUCTURE:
 
   // A collection of resource data types within a packages.
 * ResTable_package
+
         ResChunk_header header
         int id
         char[128] name
@@ -58,6 +63,7 @@ STRUCTURE:
 
   // A specification of the resources defined by a particular type.
 * ResTable_typeSpec
+
         ResChunk_header header
         byte id
         byte res0
@@ -68,6 +74,7 @@ STRUCTURE:
 
   // A collection of resource entries for a particular resource data type.
 * ResTable_type
+
         ResChunk_header
         byte id
         byte res0
@@ -80,6 +87,7 @@ STRUCTURE:
 
   // Describes a particular resource configuration.
 * ResTable_config
+
         int size
         short mcc
         short mnc
