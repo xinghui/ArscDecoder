@@ -4,28 +4,29 @@ ArscDecoder
 Decode Android resources.arsc file
 
 STRUCTURE:
+-----------------------
 
-    COMMON STRUCTURE:
+    **COMMON STRUCTURE**
 
-        // Header that appears at the front of every data chunk in a resource.
-        ResChunk_header(size: )
+          // Header that appears at the front of every data chunk in a resource.
+        * ResChunk_header
             short type
             short headerSize
             int bodySize
 
             chunk size: 2 + 2 + 4;
 
-    UNIQUE STRUCTURE:
+    **UNIQUE STRUCTURE**
 
-        // Header for a resource table.
-        ResTable_header
+          // Header for a resource table.
+        * ResTable_header
             ResChunk_header header
             int packageCount
 
             chunk size: ResChunk_header.size + 4;
 
-        // Definition for a pool of strings.
-        ResStringPool_header
+          // Definition for a pool of strings.
+        * ResStringPool_header
             ResChunk_header header
             int stringCount
             int styleCount
@@ -35,16 +36,16 @@ STRUCTURE:
 
             chunk size: ResChunk_header.size + 4 * 5
 
-        // Convenience class for assessing data in a ResStringPool resource.
-        ResStringPool
+          // Convenience class for assessing data in a ResStringPool resource.
+        * ResStringPool
             skip: stringsStart - header.headerSize = stringCount * 4 + styleCount * 4
                 stringOffsets = int[stringCount]
                 styleOffsets = int[styleCount]
             read string content, UTF8 or UTF16
             read style content
 
-        // A collection of resource data types within a packages.
-        ResTable_package
+          // A collection of resource data types within a packages.
+        * ResTable_package
             ResChunk_header header
             int id
             char[128] name
@@ -55,8 +56,8 @@ STRUCTURE:
 
             chunk size: ResChunk_header.size + 4 * 5 + 128 * 2
 
-        // A specification of the resources defined by a particular type.
-        ResTable_typeSpec
+          // A specification of the resources defined by a particular type.
+        * ResTable_typeSpec
             ResChunk_header header
             byte id
             byte res0
@@ -65,8 +66,8 @@ STRUCTURE:
 
             chunk size: ResChunk_header.size + 1 * 2 + 2 + 4
 
-        // A collection of resource entries for a particular resource data type.
-        ResTable_type
+          // A collection of resource entries for a particular resource data type.
+        * ResTable_type
             ResChunk_header
             byte id
             byte res0
@@ -77,8 +78,8 @@ STRUCTURE:
 
             chunk size: ResChunk_header.size + 1 * 2 + 2 + 4 * 2 + ResTable_config.size
 
-                // Describes a particular resource configuration.
-                ResTable_config
+                  // Describes a particular resource configuration.
+                * ResTable_config
                     int size
                     short mcc
                     short mnc
@@ -105,6 +106,7 @@ STRUCTURE:
                     // short layoutDirection
 
 SAMPLE:
+-----------------------
 
                   type:  : 02 00           2
             headerSize:  : 0C 00           12
@@ -1693,3 +1695,10 @@ SAMPLE:
               dataType:  : 12           18
                   data:  : 00 00 00 00           0
     readValue method type = 18, data = false
+
+
+Libraries
+-----------------------
+Libraries: [com.squareup.okio:okio:1.0.1][1]
+
+[1]: https://github.com/square/okio
